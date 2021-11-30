@@ -19,6 +19,7 @@ public class BookLendingService {
 
 
 
+    // Method to print book info
     public void printSearchResult(HashSet<Book> searchResult) {
 
         if (searchResult.isEmpty()) {
@@ -35,13 +36,14 @@ public class BookLendingService {
                 System.out.println("Book status: Available");
             } else
                 System.out.println("Book status: Not available");
-
+            System.out.println(book.getRating());
+            System.out.println(book.getComments());
             System.out.println(" ");
         }
     }
 
 
-
+    // Check if book is available and paid, then make loan and set availability to false
     public void loanBook(Book book, boolean paid) {
 
         if (book.isInStock() && paid) {
